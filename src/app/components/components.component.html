@@ -1,0 +1,143 @@
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/img/kfc.jpg')">
+        <div class="filter"></div>
+        <div class="content-center col-sm-12 col-lg-12 col-md-12">
+            <div class="container">
+                <div class="title-brand">
+                    <h1>Order food from favourite restaurants </h1>
+
+                    <div class="row mx-5">
+                        <div class="col-lg-12 col-sm-12 col-md-12">
+
+                            <div class="form-group" style="display: flex;">
+                                <input type="text" class="form-control"
+                                    placeholder="Search for restaurant, cuisine or a dish">
+                                <button type="button" class="btn btn-danger">Search</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <h2 class="presentation-subtitle text-center">Resturants and more, delivered to your door</h2> -->
+            </div>
+        </div>
+        <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+        <h6 class=" category-absolute ml-auto mr-auto">Resturants and more, delivered to your door
+
+        </h6>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="tim-title">
+                <h3>Pick your restaurant</h3>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-sm-6 col-md-4 card shade"
+                    *ngFor="let restaurant of restaurants; let i = index">
+                    <img src="{{restaurant.restaurantImage}}" style="height: 220px;"
+                        class="img-rounded img-responsive img-fluid" alt="Rounded Image">
+                    <div class="img-details">
+                        <p class="mt-2 font-weight-bold">{{restaurant.restaurantName}}</p>
+                        <p class="text-success" *ngIf="restaurant.availableStatus">Available</p>
+                        <p class="text-danger" *ngIf="!restaurant.availableStatus">opens tomorrow at 11 PM</p>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="button" [disabled]="!restaurant.availableStatus"
+                                    (click)="selectRestuarant(restaurant)" class="btn btn-warning btn-round">Pick
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section section-dark pt-2 pb-0 text-center">
+            <div class="">
+                <h2 class="title">Cities We Deliver To</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card  card-plain">
+
+                            <div class="card-block">
+                                <a href="#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title">PALAKKAD</h4>
+                                        <!-- <h6 class="card-category">Product Manager</h6> -->
+                                    </div>
+                                    <a class="btn btn-link  btn-neutral">Pattambi</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Palakkad</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Chalissery</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Shoranur</a> <br>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card  card-plain">
+
+                            <div class="card-block">
+                                <a href="#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title">THRISSUR</h4>
+                                        <!-- <h6 class="card-category">Product Manager</h6> -->
+                                    </div>
+                                    <a class="btn btn-link  btn-neutral">Thrissur</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Kunnamkulam</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Chavakkad</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Guruvayur</a> <br>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card  card-plain">
+
+                            <div class="card-block">
+                                <a href="#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title">MALAPPURAM</h4>
+                                        <!-- <h6 class="card-category">Product Manager</h6> -->
+                                    </div>
+                                    <a class="btn btn-link  btn-neutral">Thirur</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Kottakkal</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Valanchery</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Edappal</a> <br>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card  card-plain">
+
+                            <div class="card-block">
+                                <a href="#paper-kit">
+                                    <div class="author">
+                                        <h4 class="card-title">KOCHI</h4>
+                                        <!-- <h6 class="card-category">Product Manager</h6> -->
+                                    </div>
+                                    <a class="btn btn-link  btn-neutral">Aluva</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Edappalli</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Kaloor</a> <br>
+                                    <a class="btn btn-link  btn-neutral">Fort Kochi</a> <br>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

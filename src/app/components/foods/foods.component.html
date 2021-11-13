@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/kfc.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="{{restaurantDetails.restaurantImage}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h4 class="">{{restaurantDetails.restaurantName}}<br /></h4>
+                    <h6 class="description">Kerala</h6>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                      <div class="tim-title">
+                          <h3>Order your food</h3>
+                      </div>
+                      <div class="row" *ngIf="restaurantDetails && restaurantDetails.foods">
+                          <div class="col-xs-8 col-sm-6 col-md-4 card shade"
+                              *ngFor="let food of restaurantDetails.foods; let j = index">
+                              <img src="{{food.foodImage}}" style="height: 220px;" class="img-rounded img-responsive img-fluid" alt="Rounded Image">
+                              <div class="img-details">
+                                  <div class="row">
+                                      <div class="col">
+                                          <p class="mt-2 font-weight-bold muted">{{food.foodName}}</p>
+                                      </div>
+                                      <div class="col text-right">
+                                          <p class="mt-2 font-weight-bold text-info"> &#8377; {{food.foodPrice}}.00</p>
+                                      </div>
+                                  </div>
+                                 
+                                  <!-- <p class="text-success" *ngIf="restaurant.availableStatus">Available</p> -->
+                                  <!-- <p class="text-danger" *ngIf="!restaurant.availableStatus">opens tomorrow at 11 PM</p> -->
+                                  <div class="row">
+                                      <div class="col text-center">
+                                          <button type="button" (click)="addItemToCart(food)" class="btn btn-warning btn-round">Add to cart</button>
+                                      </div>
+                                  </div>
+                                 
+                              </div>
+                          </div>
+                         
+                      </div>
+                  </div>
+          </div>
+        </div>
+    </div>
+</div>
